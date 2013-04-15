@@ -28,4 +28,5 @@ $> java -jar build/jar/roadef.jar -conf conf/hc_lnshc.conf -p data/A/model_a1_2.
 Dislaimer
 ---------
 
-This code was developed under very high time pressure by people of various levels of Java tolerance. Be lenient in evaluating the code.
+This code was developed under very high time pressure by people of various 
+levels of Java tolerance. Be lenient in evaluating the code.
