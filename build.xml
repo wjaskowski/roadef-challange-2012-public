@@ -1,0 +1,49 @@
+<project name="roadef" basedir="." default="main">
+    <property name="src.dir"      value="src"/>
+    <property name="build.dir"    value="build"/>
+    <property name="classes.dir"  value="${build.dir}/classes"/>
+    <property name="jar.dir"      value="${build.dir}/jar"/>
+    <property name="main-class"   value="put.roadef.Main"/>
+    <property name="lib.dir"      value= "lib"/>
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
+
+    <!--I must mkdir here; otherwise manifestclasspath fails -->
+    <mkdir dir="${jar.dir}"/>
+    <!--This is magic-->
+    <manifestclasspath property="jar.classpath" jarfile="${jar.dir}/${ant.project.name}.jar">
+        <classpath refid="classpath"/>
+    </manifestclasspath>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" debug="on" debuglevel="vars,lines,source"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+            <zipgroupfileset dir="${lib.dir}" includes="*.jar"/>
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+                <attribute name="Class-Path" value="${jar.classpath}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+        <classpath>
+            <path refid="classpath"/>
+            <path location="${jar.dir}/${ant.project.name}.jar"/>
+        </classpath>
+    </target>
+
+    <target name="main" depends="clean,jar"/>
+</project>
