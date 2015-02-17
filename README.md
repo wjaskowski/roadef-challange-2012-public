@@ -1,3 +1,6 @@
+About
+-----
+
 This repository contains the solution submitted by team J12 for the EURO/ROADEF
 2012 Challange Machine Reassignment Problem proposed by Google 
 (http://challenge.roadef.org/2012/en/index.php) 
@@ -5,6 +8,7 @@ This repository contains the solution submitted by team J12 for the EURO/ROADEF
 For more informations about our solution see 
 http://www.cs.put.poznan.pl/wjaskowski/projects/roadef-challenge-2012
 
+The corresponding paper: http://link.springer.com/article/10.1007%2Fs10479-014-1780-6
 
 Build
 -----
