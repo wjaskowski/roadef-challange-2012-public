@@ -8,7 +8,9 @@ This repository contains the solution submitted by team J12 for the EURO/ROADEF
 For more informations about our solution see 
 http://www.cs.put.poznan.pl/wjaskowski/projects/roadef-challenge-2012
 
-The corresponding paper: http://link.springer.com/article/10.1007%2Fs10479-014-1780-6
+Cite
+----
+Wojciech Jaśkowski, Marcin Szubert & Piotr Gawron, A hybrid MIP-based large neighborhood search heuristic for solving the machine reassignment problem, Annals of Operations Research, Springer, 2015 (http://link.springer.com/article/10.1007%2Fs10479-014-1780-6)
 
 Build
 -----
